@@ -15,7 +15,7 @@ ARG JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"
 ARG BUILDCMDS=\
 "   cd libjpeg-turbo-$LIBJPEGTURBO_VERSION "\
 '&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
-'&& $COMMON_MAKECMDS '\
+'&& eval "$COMMON_MAKECMDS" '\
 '&& mkdir -p "$DESTDIR-utils/usr" '\
 '&& mv "$DESTDIR/usr/bin" "$DESTDIR-util/usr/"'
 # ARGs (passed to Build) </END>
