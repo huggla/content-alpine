@@ -12,7 +12,7 @@ ARG CLONEGITS="https://github.com/libspatialindex/libspatialindex.git"
 ARG BUILDCMDS=\
 "   cd libspatialindex "\
 "&& ./autogen.sh "\
-'&& $COMMON_INSTALLSRC'
+'&& eval "$COMMON_INSTALLSRC"'
 # ARGs (passed to Build) </END>
 
 # Generic template (don't edit) <BEGIN>
