@@ -15,11 +15,11 @@ ARG DOWNLOADS="https://www.riverbankcomputing.com/static/Downloads/QScintilla/$Q
 ARG BUILDCMDS=\
 "   cd QScintilla_gpl-$QSCINTILLA_VERSION/Qt4Qt5 "\
 "&& qmake-qt5 "\
-'&& $COMMON_MAKECMDS '\
+'&& eval "$COMMON_MAKECMDS" '\
 "&& cd ../Python "\
 "&& python3 configure.py --pyqt=PyQt5 --qmake=/usr/bin/qmake-qt5 --no-docstrings "\
 "&& sed -i 's/include_next/include/' /usr/include/fortify/stdlib.h "\
-'&& $COMMON_MAKECMDS '\
+'&& eval "$COMMON_MAKECMDS" '\
 "&& cd / "\
 "&& cp -a \$BUILDDIR \$DESTDIR/ "\
 '&& apk --repositories-file /etc/apk/repositories --keys-dir /etc/apk/keys --no-cache --initramfs-diskless-boot --clean-protected --root $DESTDIR add --initdb '$BUILDDEPS\
