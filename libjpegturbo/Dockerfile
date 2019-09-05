@@ -15,10 +15,10 @@ ARG BUILDDEPS="nasm openjdk8"
 ARG JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"
 ARG BUILDCMDS=\
 "   cd libjpeg-turbo-$LIBJPEGTURBO_VERSION "\
-'&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
-'&& eval "$COMMON_MAKECMDS" '\
-'&& mkdir -p "$DESTDIR-utils/usr" '\
-'&& mv "$DESTDIR/usr/bin" "$DESTDIR-utils/usr/"'
+'\n cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
+'\n eval "$COMMON_MAKECMDS" '\
+'\n mkdir -p "$DESTDIR-utils/usr" '\
+'\n mv "$DESTDIR/usr/bin" "$DESTDIR-utils/usr/"'
 # ARGs (passed to Build) </END>
 
 # Generic template (don't edit) <BEGIN>
