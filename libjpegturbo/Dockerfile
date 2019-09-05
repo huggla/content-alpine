@@ -1,7 +1,7 @@
 # =========================================================================
 # Init
 # =========================================================================
-# ARGs (passed to Build) <BEGIN>
+# ARGs (can be passed to Build/Final) <BEGIN>
 ARG TAG="20190905"
 ARG IMAGETYPE="content"
 ARG LIBJPEGTURBO_VERSION="2.0.2"
@@ -14,11 +14,11 @@ ARG BUILDDEPS="nasm openjdk8"
 ARG JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"
 ARG BUILDCMDS=\
 "   cd libjpeg-turbo-$LIBJPEGTURBO_VERSION "\
-'\n cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
-'\n eval "$COMMON_MAKECMDS" '\
-'\n mkdir -p "$DESTDIR-utils/usr" '\
-'\n mv "$DESTDIR/usr/bin" "$DESTDIR-utils/usr/"'
-# ARGs (passed to Build) </END>
+'&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
+'&& eval "$COMMON_MAKECMDS" '\
+'&& mkdir -p "$DESTDIR-utils/usr" '\
+'&& mv "$DESTDIR/usr/bin" "$DESTDIR-utils/usr/"'
+# ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
 FROM ${CONTENTIMAGE1:-scratch} as content1
