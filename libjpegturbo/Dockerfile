@@ -2,6 +2,7 @@
 # Init
 # =========================================================================
 # ARGs (passed to Build) <BEGIN>
+ARG BUILDIMAGE="huggla/build:test"
 ARG TAG="20190902"
 ARG IMAGETYPE="content"
 ARG LIBJPEGTURBO_VERSION="2.0.2"
