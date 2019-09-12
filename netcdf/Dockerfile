@@ -13,16 +13,12 @@ ARG HUBREPO="netcdf"
 ARG HUBVERSION="$NETCDF_VERSION"
 ARG BASEIMAGE="huggla/busybox:$TAG"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG BUILDDEPS="zlib-dev openmpi-dev curl-dev m4"
+ARG BUILDDEPS="zlib-dev openmpi-dev curl-dev m4 hdf5-dev"
 ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCDF_VERSION.tar.gz \
                https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_VERSION/hdf5-$HDF5_VERSION/src/hdf5-$HDF5_VERSION.tar.gz"
 ARG BUILDCMDS=\
-"   cd hdf5-$HDF5_VERSION "\
-'&& eval "CC=mpicc $COMMON_CONFIGURECMD --enable-parallel --disable-fortran --disable-java --disable-cxx --enable-static-exec --enable-direct-vfd --disable-dconv-exception --disable-dconv-accuracy --without-szlib" '\
-'&& make -s '\
-'&& DESTDIR="" make -s install '\
-"&& cd ../netcdf-c-$NETCDF_VERSION "\
-'&& eval "CC=mpicc $COMMON_CONFIGURECMD --disable-doxygen --disable-utilities --disable-testsets" '\
+"   cd netcdf-c-$NETCDF_VERSION "\
+'&& eval "CC=mpicc $COMMON_CONFIGURECMD" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (passed to Build) </END>
 
