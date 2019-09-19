@@ -3,7 +3,7 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG TAG="20190919"
-ARG IMAGETYPE="content"
+ARG IMAGETYPE="content,base"
 ARG FREETDS_VERSION="1.1.6"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="freetds-content"
