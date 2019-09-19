@@ -1,8 +1,8 @@
 # =========================================================================
 # Init
 # =========================================================================
-# ARGs (passed to Build) <BEGIN>
-ARG TAG="20190911"
+# ARGs (can be passed to Build/Final) <BEGIN>
+ARG TAG="20190919"
 ARG IMAGETYPE="content"
 ARG PROJ_VERSION="5.2.0"
 ARG HUBPROFILE="huggla"
@@ -16,7 +16,7 @@ ARG BUILDCMDS=\
 '&& mkdir -p "$DESTDIR-datumgrid/usr/share" "$DESTDIR-util/usr" '\
 '&& mv "$DESTDIR/usr/share/proj" "$DESTDIR-datumgrid/usr/share/" '\
 '&& mv "$DESTDIR/usr/bin" "$DESTDIR-util/usr/"'
-# ARGs (passed to Build) </END>
+# ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
 FROM ${CONTENTIMAGE1:-scratch} as content1
