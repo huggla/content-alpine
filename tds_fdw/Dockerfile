@@ -14,6 +14,7 @@ ARG BUILDDEPS="postgresql-dev libressl2.9-libssl unixodbc gettext"
 ARG BUILDCMDS=\
 "   cd tds_fdw "\
 "&& ls -la / "\
+"&& ls -la /content-dev "\
 "&& ls -la /usr "\
 "&& ls -la /usr/include "\
 "&& ls -la /finalfs "\
