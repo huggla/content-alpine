@@ -13,13 +13,6 @@ ARG CLONEGITS="https://github.com/tds-fdw/tds_fdw.git"
 ARG BUILDDEPS="postgresql-dev libressl2.9-libssl unixodbc gettext"
 ARG BUILDCMDS=\
 "   cd tds_fdw "\
-"&& ls -la / "\
-"&& ls -la /content-dev "\
-"&& ls -la /usr "\
-"&& ls -la /usr/include "\
-"&& ls -la /finalfs "\
-"&& ls -la /finalfs/usr "\
-"&& ls -la /finalfs/usr/include "\
 "&& make USE_PGXS=1 "\
 "&& make USE_PGXS=1 install"
 # ARGs (can be passed to Build/Final) </END>
