@@ -1,8 +1,8 @@
 # =========================================================================
 # Init
 # =========================================================================
-# ARGs (passed to Build) <BEGIN>
-ARG TAG="20190911"
+# ARGs (can be passed to Build/Final) <BEGIN>
+ARG TAG="20190919"
 ARG IMAGETYPE="content"
 ARG NETCDF_VERSION="4.7.0"
 ARG HDF5_MAJOR_VERSION="1.10"
@@ -18,9 +18,8 @@ ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCD
                https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_VERSION/hdf5-$HDF5_VERSION/src/hdf5-$HDF5_VERSION.tar.gz"
 ARG BUILDCMDS=\
 "   cd netcdf-c-$NETCDF_VERSION "\
-'&& eval "CC=mpicc $COMMON_CONFIGURECMD" '\
-'&& eval "$COMMON_MAKECMDS"'
-# ARGs (passed to Build) </END>
+'&& eval "$COMMON_INSTALLSRC"'
+# ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
 FROM ${CONTENTIMAGE1:-scratch} as content1
