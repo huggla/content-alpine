@@ -12,7 +12,7 @@ ARG BASEIMAGE="huggla/busybox:$TAG"
 ARG DOWNLOADS="https://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-$LIBJPEGTURBO_VERSION.tar.gz"
 ARG BUILDDEPS="nasm openjdk8"
 ARG JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"
-ARG CFLAGS="-O2 -fomit-frame-pointer -march=native"
+ARG CFLAGS="-fno-reorder-blocks"
 ARG BUILDCMDS=\
 "   cd libjpeg-turbo-$LIBJPEGTURBO_VERSION "\
 '&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_C_FLAGS="$CFLAGS" -DWITH_JAVA=1 '\
