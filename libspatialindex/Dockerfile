@@ -2,7 +2,7 @@
 # Init
 # =========================================================================
 # ARGs (passed to Build) <BEGIN>
-ARG TAG="20190919"
+ARG TAG="20190925"
 ARG IMAGETYPE="content"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="libspatialindex"
