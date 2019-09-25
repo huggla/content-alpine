@@ -2,7 +2,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG TAG="20190919"
+ARG TAG="20190925"
 ARG IMAGETYPE="content"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="tds_fdw"
