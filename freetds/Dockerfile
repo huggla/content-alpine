@@ -18,8 +18,11 @@ ARG BUILDCMDS=\
 "&& sed -i '96i' ./src/tds/tls.c "\
 "&& sed -i '97i#ifndef TLS_ST_OK' ./src/tds/tls.c "\
 "&& sed -i '28i#include <sys/stat.h>' ./src/apps/fisql/fisql.c "\
+'&& echo "$DESTDIR" '\
+'&& ls -la "$DESTDIR" '\
 '&& eval "$COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --enable-msdblib --with-openssl=/usr --enable-odbc --with-unixodbc=/usr" '\
-'&& eval "$COMMON_MAKECMDS"'
+'&& eval "$COMMON_MAKECMDS" '\
+'&& ls -la "$DESTDIR"'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
