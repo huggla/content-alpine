@@ -14,7 +14,7 @@ ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgagent/pgAgent-$PGAGENTVE
 ARG BUILDDEPS="postgresql-dev libc-dev boost-dev ssl_client"
 ARG BUILDCMDS=\
 "   cd pgAgent-$PGAGENTVERSION-Source "\
-'&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DSTATIC_BUILD:BOOLEAN=FALSE '\
+'&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_FLAGS="$CFLAGS" '\
 '&& make '\
 '&& cp -a *.sql *.control sql/* $DESTDIR/usr/share/postgresql/extension/ '\
 '&& cp -a pgagent $DESTDIR/usr/bin'
