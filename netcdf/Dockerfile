@@ -18,7 +18,8 @@ ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCD
                https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_VERSION/hdf5-$HDF5_VERSION/src/hdf5-$HDF5_VERSION.tar.gz"
 ARG BUILDCMDS=\
 "   cd netcdf-c-$NETCDF_VERSION "\
-'&& eval "$COMMON_INSTALLSRC"'
+'&& eval "CC=mpicc $COMMON_CONFIGURECMD --disable-doxygen --disable-utilities --disable-testsets" '\
+'&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
