@@ -18,8 +18,8 @@ ARG DOWNLOADS="https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_V
 ARG CC="mpicc"
 ARG BUILDCMDS=\
 "   cd hdf5-$HDF5_VERSION "\
-'&& $COMMON_CONFIGURECMD --enable-parallel --disable-fortran --disable-java --enable-static-exec --enable-direct-vfd --without-szlib '\
-'&& $COMMON_MAKECMDS '\
+'&& eval "$COMMON_CONFIGURECMD --enable-parallel --disable-fortran --disable-java --enable-static-exec --enable-direct-vfd --without-szlib" '\
+'&& eval "$COMMON_MAKECMDS" '\
 '&& mkdir -p "$DESTDIR-examples/usr/share" '\
 '&& mv "$DESTDIR/usr/share/hdf5_examples" "$DESTDIR-examples/usr/share/"'
 # ARGs (can be passed to Build/Final) </END>
