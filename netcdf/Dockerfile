@@ -20,7 +20,7 @@ ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCD
 ARG CC="mpicc"
 ARG BUILDCMDS=\
 "   cd netcdf-c-$NETCDF_VERSION "\
-'&& eval "$COMMON_CONFIGURECMD --disable-doxygen --disable-utilities --disable-testsets --disable-examples --disable-docs" '\
+'&& eval "$COMMON_CONFIGURECMD --disable-doxygen --disable-utilities --disable-testsets --disable-examples" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
 
