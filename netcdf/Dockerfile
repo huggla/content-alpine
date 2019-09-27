@@ -17,7 +17,7 @@ ARG CONTENTIMAGE1="huggla/hdf5-content:$HDF5_VERSION-$TAG"
 ARG CONTENTSOURCE1="/content*"
 ARG CONTENTDESTINATION1="/"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG BUILDDEPS="zlib-dev openmpi-dev curl-dev m4 hdf5-dev"
+ARG BUILDDEPS="zlib-dev openmpi-dev curl-dev m4"
 ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCDF_VERSION.tar.gz \
                https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_VERSION/hdf5-$HDF5_VERSION/src/hdf5-$HDF5_VERSION.tar.gz"
 ARG CC="mpicc"
