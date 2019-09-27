@@ -2,13 +2,14 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG TAG="20190925"
+ARG SaM_VERSION="1.0"
+ARG TAG="20190927"
 ARG IMAGETYPE="content,base"
 ARG FREETDS_VERSION="1.1.6"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="freetds-content"
 ARG HUBVERSION="$FREETDS_VERSION"
-ARG BASEIMAGE="huggla/busybox:$TAG"
+ARG BASEIMAGE="huggla/busybox:$SaM_VERSION-$TAG"
 ARG DOWNLOADS="http://www.freetds.org/files/stable/freetds-$FREETDS_VERSION.tar.gz"
 ARG BUILDDEPS="libressl-dev readline-dev unixodbc-dev gettext"
 ARG RUNDEPS="libressl2.9-libssl unixodbc"
@@ -27,15 +28,16 @@ FROM ${CONTENTIMAGE1:-scratch} as content1
 FROM ${CONTENTIMAGE2:-scratch} as content2
 FROM ${CONTENTIMAGE3:-scratch} as content3
 FROM ${CONTENTIMAGE4:-scratch} as content4
-FROM ${INITIMAGE:-${BASEIMAGE:-huggla/base:$TAG}} as init
+FROM ${CONTENTIMAGE5:-scratch} as content5
+FROM ${INITIMAGE:-${BASEIMAGE:-huggla/base:$SaM_VERSION-$TAG}} as init
 # Generic template (don't edit) </END>
 
 # =========================================================================
 # Build
 # =========================================================================
 # Generic template (don't edit) <BEGIN>
-FROM ${BUILDIMAGE:-huggla/build:$TAG} as build
-FROM ${BASEIMAGE:-huggla/base:$TAG} as final
+FROM ${BUILDIMAGE:-huggla/build:SaM_VERSION-$TAG} as build
+FROM ${BASEIMAGE:-huggla/base:SaM_VERSION-$TAG} as final
 COPY --from=build /finalfs /
 # Generic template (don't edit) </END>
 
