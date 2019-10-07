@@ -3,7 +3,7 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="1.0"
-ARG TAG="20190927"
+ARG TAG="20191007"
 ARG IMAGETYPE="content"
 ARG HDF5_MAJOR_VERSION="1.10"
 ARG HDF5_MINOR_VERSION="5"
