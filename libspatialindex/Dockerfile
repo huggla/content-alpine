@@ -12,7 +12,6 @@ ARG BASEIMAGE="huggla/busybox:$SaM_VERSION-$TAG"
 ARG CLONEGITS="https://github.com/libspatialindex/libspatialindex.git"
 ARG BUILDCMDS=\
 "   cd libspatialindex "\
-"&& ./autogen.sh "\
 '&& eval "$COMMON_INSTALLSRC"'
 # ARGs (can be passed to Build/Final) </END>
 
