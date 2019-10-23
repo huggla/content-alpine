@@ -3,7 +3,7 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="1.0"
-ARG TAG="20191007"
+ARG TAG="20191018"
 ARG IMAGETYPE="content"
 ARG QSCINTILLA_VERSION="2.11.2"
 ARG HUBPROFILE="huggla"
