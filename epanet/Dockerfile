@@ -11,11 +11,16 @@ ARG HUBREPO="epanet"
 ARG HUBVERSION="$EPANET_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
 ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-10/en2source.zip"
+ARG CFLAGS=""
+ARG MPICXX=""
+ARG CHARSET=""
+ARG LANG=""
+ARG MPICC=""
 ARG BUILDCMDS=\
 "   unzip -o en2source.zip "\
 "&& unzip -o makefiles.ZIP "\
-"&& mkdir epanet2 "\
-"&& cd epanet2 "\
+"&& mkdir apanet2 "\
+"&& cd apanet2 "\
 "&& unzip ../epanet2.zip "\
 "&& ls -la "\
 "&& unzip -o ../GNU_EXE.ZIP "\
