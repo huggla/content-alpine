@@ -13,7 +13,7 @@ ARG HUBPROFILE="huggla"
 ARG HUBREPO="swmm"
 ARG HUBVERSION="$SWMM_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
-ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-08/swmm$SWMM_MAJOR_VERSION$SWMM_MINOR_VERSION$SWMM_VERSION_REVISION_engine_0.zip"
+ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-08/swmm${SWMM_MAJOR_VERSION}${SWMM_MINOR_VERSION}${SWMM_VERSION_REVISION}_engine_0.zip"
 ARG BUILDCMDS=\
 "   unzip -o makefiles.zip "\
 "&& mkdir swmm "\
