@@ -15,7 +15,8 @@ ARG BUILDCMDS=\
 "   unzip -o makefiles.ZIP "\
 "&& mkdir epanet2 "\
 "&& cd epanet2 "\
-"&& unzip -o ../epanet2.zip ../GNU_EXE.ZIP "\
+"&& unzip ../epanet2.zip "\
+"&& unzip -o ../GNU_EXE.ZIP "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
 "&& sed -i 's|#define DLL|//#define DLL|g' epanet.c "\
 "&& make "\
