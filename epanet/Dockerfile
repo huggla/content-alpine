@@ -5,18 +5,22 @@
 ARG SaM_VERSION="1.1-edge"
 ARG TAG="20191024"
 ARG IMAGETYPE="content"
-ARG PROJ_VERSION="5.2.0"
+ARG EPANET_VERSION="2.0.12"
 ARG HUBPROFILE="huggla"
-ARG HUBREPO="proj5"
-ARG HUBVERSION="$PROJ_VERSION"
+ARG HUBREPO="epanet"
+ARG HUBVERSION="$EPANET_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
-ARG DOWNLOADS="http://download.osgeo.org/proj/proj-$PROJ_VERSION.tar.gz"
+ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-10/en2source.zip"
 ARG BUILDCMDS=\
-"   cd proj-$PROJ_VERSION "\
-'&& eval "$COMMON_INSTALLSRC" '\
-'&& mkdir -p "$DESTDIR-datumgrid/usr/share" "$DESTDIR-util/usr" '\
-'&& mv "$DESTDIR/usr/share/proj" "$DESTDIR-datumgrid/usr/share/" '\
-'&& mv "$DESTDIR/usr/bin" "$DESTDIR-util/usr/"'
+"   unzip -o makefiles.ZIP "\
+"&& mkdir epanet2 "\
+"&& cd epanet2 "\
+"&& unzip -o ../epanet2.zip ../GNU_EXE.ZIP "\
+"&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
+"&& sed -i 's|#define DLL|//#define DLL|g' epanet.c "\
+"&& make "\
+'&& mkdir -p "$DESTDIR/usr/bin" '\
+'&& cp -a epanet2 "$DESTDIR/usr/bin/"'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
