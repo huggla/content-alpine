@@ -3,7 +3,7 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="1.1-edge"
-ARG TAG="20191024"
+ARG TAG="20191112"
 ARG IMAGETYPE="content"
 ARG SWMM_VERSION="5.1.13"
 ARG HUBPROFILE="huggla"
@@ -11,6 +11,7 @@ ARG HUBREPO="swmm"
 ARG HUBVERSION="$SWMM_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
 ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-08/swmm51013_engine_0.zip"
+ARG CFLAGS=""
 ARG BUILDCMDS=\
 "   unzip -o makefiles.zip "\
 "&& mkdir swmm "\
