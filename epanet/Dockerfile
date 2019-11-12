@@ -19,7 +19,7 @@ ARG BUILDCMDS=\
 "&& unzip -o ../GNU_EXE.ZIP "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
 "&& sed -i 's|#define DLL|//#define DLL|g' epanet.c "\
-"&& make -s "\
+"&& CFLAGS='' make -s "\
 '&& mkdir -p "$DESTDIR/usr/bin" '\
 '&& cp -a epanet2 "$DESTDIR/usr/bin/"'
 # ARGs (can be passed to Build/Final) </END>
