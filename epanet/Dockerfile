@@ -16,11 +16,13 @@ ARG BUILDCMDS=\
 "&& mkdir epanet2 "\
 "&& cd epanet2 "\
 "&& unzip ../epanet2.zip "\
+"&& ls -la "\
 "&& unzip -o ../GNU_EXE.ZIP "\
+"&& ls -la "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
-"&& sed -i 's|#define DLL|//#define DLL|g' epanet.c "\
-"&& unset CFLAGS "\
-'&& make -s '\
+"&& sed -iE '/#define (DLL|SOL)/d' epanet.c "\
+"&& unset CFLAGS CC CPATH MPICC MPICXX "\
+'&& make '\
 '&& mkdir -p "$DESTDIR/usr/bin" '\
 '&& cp -a epanet2 "$DESTDIR/usr/bin/"'
 # ARGs (can be passed to Build/Final) </END>
