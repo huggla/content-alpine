@@ -10,9 +10,9 @@ ARG HUBPROFILE="huggla"
 ARG HUBREPO="openjdk-content"
 ARG HUBVERSION="$OPENJDK_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
-
+ARG DOWNLOADS="https://hg.openjdk.java.net/portola/portola/archive/tip.tar.gz"
 ARG BUILDDEPS=""
-
+ARG BUILDCMDS=""
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
