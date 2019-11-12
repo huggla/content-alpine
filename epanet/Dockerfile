@@ -12,7 +12,8 @@ ARG HUBVERSION="$EPANET_VERSION"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
 ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-10/en2source.zip"
 ARG BUILDCMDS=\
-"   unzip -o makefiles.ZIP "\
+"   unzip -o en2source.zip "\
+"&& unzip -o makefiles.ZIP "\
 "&& mkdir epanet2 "\
 "&& cd epanet2 "\
 "&& unzip ../epanet2.zip "\
@@ -21,8 +22,7 @@ ARG BUILDCMDS=\
 "&& ls -la "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
 "&& sed -iE '/#define (DLL|SOL)/d' epanet.c "\
-"&& unset CFLAGS CC CPATH MPICC MPICXX "\
-'&& make '\
+'&& env -i make '\
 '&& mkdir -p "$DESTDIR/usr/bin" '\
 '&& cp -a epanet2 "$DESTDIR/usr/bin/"'
 # ARGs (can be passed to Build/Final) </END>
