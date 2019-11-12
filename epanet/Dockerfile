@@ -21,7 +21,7 @@ ARG BUILDCMDS=\
 "&& unzip -o ../GNU_EXE.ZIP "\
 "&& ls -la "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
-"&& sed -i 's|#define DLL|//#define DLL|g' epanet.c \"
+"&& sed -i 's|#define DLL|//#define DLL|g' epanet.c "\
 '&& env '\
 "&& make "\
 '&& mkdir -p "$DESTDIR/usr/bin" '\
