@@ -15,7 +15,8 @@ ARG BUILDCMDS=\
 "   unzip -o makefiles.zip "\
 "&& mkdir swmm "\
 "&& cd swmm "\
-"&& unzip -o ../source5_1_013.zip ../GNU-LIB.zip "\
+"&& unzip ../source5_1_013.zip "\
+"&& unzip -o ../GNU-LIB.zip "\
 "&& make "\
 "&& cc -L ./ -o swmm5 main.c -lswmm5 "\
 '&& mkdir -p "$DESTDIR/usr/lib" "$DESTDIR/usr/bin" '\
