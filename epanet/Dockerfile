@@ -9,7 +9,6 @@ ARG EPANET_VERSION="2.0.12"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="epanet"
 ARG HUBVERSION="$EPANET_VERSION"
-ARG INITIMAGE="scratch"
 ARG BASEIMAGE="huggla/sam_$SaM_VERSION:busybox-$TAG"
 ARG DOWNLOADS="https://www.epa.gov/sites/production/files/2018-10/en2source.zip"
 ARG BUILDCMDS=\
@@ -22,7 +21,7 @@ ARG BUILDCMDS=\
 "&& unzip -o ../GNU_EXE.ZIP "\
 "&& ls -la "\
 "&& sed -i 's|//#define CLE|#define CLE|g' epanet.c "\
-"&& sed -iE '/#define (DLL|SOL)/d' epanet.c "\
+"&& sed -i 's|#define DLL|//#define DLL|g' epanet.c \"
 '&& env '\
 "&& make "\
 '&& mkdir -p "$DESTDIR/usr/bin" '\
