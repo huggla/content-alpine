@@ -3,7 +3,7 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="1.1-edge"
-ARG TAG="20191024"
+ARG TAG="20191112"
 ARG IMAGETYPE="content"
 ARG EPANET_VERSION="2.0.12"
 ARG HUBPROFILE="huggla"
