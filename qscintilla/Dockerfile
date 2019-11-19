@@ -14,7 +14,7 @@ ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
 ARG BUILDDEPS="build-base libtool qt5-qtbase-dev py3-sip-pyqt5 py3-sip py3-qtpy py-sip-dev python3-dev fortify-headers"
 ARG DOWNLOADS="https://www.riverbankcomputing.com/static/Downloads/QScintilla/$QSCINTILLA_VERSION/QScintilla-$QSCINTILLA_VERSION.tar.gz"
 ARG BUILDCMDS=\
-"   cd QScintilla_gpl-$QSCINTILLA_VERSION/Qt4Qt5 "\
+"   cd QScintilla-$QSCINTILLA_VERSION/Qt4Qt5 "\
 "&& qmake-qt5 "\
 '&& eval "$COMMON_MAKECMDS" '\
 "&& cd ../Python "\
