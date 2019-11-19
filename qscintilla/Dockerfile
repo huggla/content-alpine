@@ -24,8 +24,8 @@ ARG BUILDCMDS=\
 "&& cd / "\
 "&& cp -a \$BUILDDIR \$DESTDIR/ "\
 '&& apk --repositories-file /etc/apk/repositories --keys-dir /etc/apk/keys --no-cache --initramfs-diskless-boot --clean-protected --root $DESTDIR add --initdb '$BUILDDEPS\
-'&& chroot "$DESTDIR" /bin/sh -c "cd \"$BUILDDIR/QScintilla_gpl-'"$QSCINTILLA_VERSION"'/Qt4Qt5\" && make install" '\
-'&& chroot "$DESTDIR" /bin/sh -c "cd \"$BUILDDIR/QScintilla_gpl-'"$QSCINTILLA_VERSION"'/Python\" && make install" '\
+'&& chroot "$DESTDIR" /bin/sh -c "cd \"$BUILDDIR/QScintilla-'"$QSCINTILLA_VERSION"'/Qt4Qt5\" && make install" '\
+'&& chroot "$DESTDIR" /bin/sh -c "cd \"$BUILDDIR/QScintilla-'"$QSCINTILLA_VERSION"'/Python\" && make install" '\
 '&& apk --repositories-file /etc/apk/repositories --keys-dir /etc/apk/keys --no-cache --initramfs-diskless-boot --clean-protected --root $DESTDIR --purge del '$BUILDDEPS\
 "&& rm -rf \$DESTDIR\$BUILDDIR"
 # ARGs (can be passed to Build/Final) </END>
