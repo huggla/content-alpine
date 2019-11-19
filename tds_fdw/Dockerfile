@@ -3,13 +3,13 @@
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="1.1-edge"
-ARG TAG="20191024"
+ARG TAG="20191112"
 ARG IMAGETYPE="content"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="tds_fdw"
 ARG HUBVERSION="$TAG"
-ARG FREETDS_VERSION="1.1.20"
-ARG BASEIMAGE="huggla/freetds-content:$FREETDS_VERSION-$TAG"
+ARG FREETDS_VERSION="1.1.21"
+ARG BASEIMAGE="huggla/content-alpine:freetds_$FREETDS_VERSION-$TAG"
 ARG CLONEGITS="https://github.com/tds-fdw/tds_fdw.git"
 ARG BUILDDEPS="postgresql-dev libressl2.9-libssl unixodbc gettext"
 ARG BUILDCMDS=\
