@@ -1,4 +1,4 @@
-# Secure and Minimal content-images
+# Secure and Minimal content-images, Libjpegturbo
 # https://hub.docker.com/repository/docker/huggla/sam-content
 
 # =========================================================================
