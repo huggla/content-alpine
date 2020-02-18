@@ -1,4 +1,4 @@
-# Secure and Minimal content-images, Epanet
+# Secure and Minimal content-images, Freetds
 # https://hub.docker.com/repository/docker/huggla/sam-content
 
 # =========================================================================
