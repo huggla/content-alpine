@@ -5,6 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
+ARG SaM_VERSION="2.0.0"
 ARG IMAGETYPE="content"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="tds_fdw"
