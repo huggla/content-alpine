@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.0"
+ARG SaM_VERSION="2.0.1"
 ARG IMAGETYPE="content"
 ARG HDF5_MAJOR_VERSION="1.10"
 ARG HDF5_MINOR_VERSION="5"
