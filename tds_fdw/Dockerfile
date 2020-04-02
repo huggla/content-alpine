@@ -11,8 +11,9 @@ ARG HUBPROFILE="huggla"
 ARG HUBREPO="tds_fdw"
 ARG HUBVERSION="master"
 ARG FREETDS_VERSION="1.1.24"
+ARG TDS_FDW_VERSION="2.0.1"
 ARG BASEIMAGE="huggla/sam-content:freetds-$FREETDS_VERSION"
-ARG CLONEGITS="https://github.com/tds-fdw/tds_fdw.git"
+ARG DOWNLOADS="https://github.com/tds-fdw/tds_fdw/archive/v$TDS_FDW_VERSION.zip"
 ARG BUILDDEPS="postgresql-dev libressl3.0-libssl unixodbc gettext clang llvm9"
 ARG BUILDCMDS=\
 "   cd tds_fdw "\
