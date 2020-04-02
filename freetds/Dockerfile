@@ -14,7 +14,7 @@ ARG HUBVERSION="$FREETDS_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG DOWNLOADS="http://www.freetds.org/files/stable/freetds-$FREETDS_VERSION.tar.gz"
 ARG BUILDDEPS="libressl-dev readline-dev unixodbc-dev gettext"
-ARG RUNDEPS="libressl2.9-libssl unixodbc"
+ARG RUNDEPS="libressl3.0-libssl unixodbc"
 ARG BUILDCMDS=\
 "   cd freetds-$FREETDS_VERSION "\
 "&& sed -i '95i#endif' ./src/tds/tls.c "\
