@@ -13,7 +13,7 @@ ARG HUBVERSION="master"
 ARG FREETDS_VERSION="1.1.24"
 ARG BASEIMAGE="huggla/sam-content:freetds-$FREETDS_VERSION"
 ARG CLONEGITS="https://github.com/tds-fdw/tds_fdw.git"
-ARG BUILDDEPS="postgresql-dev libressl2.9-libssl unixodbc gettext clang llvm9"
+ARG BUILDDEPS="postgresql-dev libressl3.0-libssl unixodbc gettext clang llvm9"
 ARG BUILDCMDS=\
 "   cd tds_fdw "\
 "&& make USE_PGXS=1 "\
