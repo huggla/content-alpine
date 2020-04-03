@@ -16,6 +16,8 @@ ARG DOWNLOADS="https://github.com/coreutils/coreutils/archive/v$COREUTILS_VERSIO
 ARG BUILDDEPS="bash acl-dev attr-dev perl"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
+"&& pwd "\
+"&& ls -la "\
 '&& eval "LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
