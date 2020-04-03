@@ -13,6 +13,7 @@ ARG HUBREPO="coreutils"
 ARG HUBVERSION="$COREUTILS_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG DOWNLOADS="https://github.com/coreutils/coreutils/archive/v$COREUTILS_VERSION.tar.gz"
+ARG BUILDDEPS="bash acl-dev attr-dev perl"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
 '&& eval "LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
