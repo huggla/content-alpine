@@ -12,12 +12,10 @@ ARG HUBPROFILE="huggla"
 ARG HUBREPO="coreutils"
 ARG HUBVERSION="$COREUTILS_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
-ARG DOWNLOADS="https://github.com/coreutils/coreutils/archive/v$COREUTILS_VERSION.tar.gz"
-ARG BUILDDEPS="bash acl-dev attr-dev perl"
+ARG DOWNLOADS="https://ftp.gnu.org/gnu/coreutils/coreutils-$COREUTILS_VERSION.tar.gz"
+ARG BUILDDEPS="acl-dev attr-dev"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
-"&& pwd "\
-"&& ls -la "\
 '&& eval "LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
