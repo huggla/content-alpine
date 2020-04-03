@@ -16,7 +16,7 @@ ARG DOWNLOADS="https://ftp.gnu.org/gnu/coreutils/coreutils-$COREUTILS_VERSION.ta
 ARG BUILDDEPS="acl-dev attr-dev"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
-'&& eval "LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
+'&& eval "FORCE_UNSAFE_CONFIGURE=1 LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
 
