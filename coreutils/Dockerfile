@@ -1,24 +1,22 @@
-# Secure and Minimal image of Cron
-# https://hub.docker.com/repository/docker/huggla/sam-cron
+# Secure and Minimal content-images, GNU Coreutils
+# https://hub.docker.com/repository/docker/huggla/sam-content
 
 # =========================================================================
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="2.0.1"
-ARG IMAGETYPE="base"
+ARG IMAGETYPE="content"
 ARG COREUTILS_VERSION="8.32"
-ARG MAKEDIRS="/var/spool/cron/crontabs"
-ARG EXPOSEFUNCTIONS="readEnvironmentVars runBinCmdAsLinuxUser execCmdAsLinuxUser trim"
+ARG HUBPROFILE="huggla"
+ARG HUBREPO="coreutils"
+ARG HUBVERSION="$COREUTILS_VERSION"
+ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG DOWNLOADS="https://github.com/coreutils/coreutils/archive/v$COREUTILS_VERSION.tar.gz"
-ARG BUILDDEPS="coreutils"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
 '&& eval "$COMMON_CONFIGURECMD --enable-install-program=date --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
-'&& eval "$COMMON_MAKECMDS" '\
-'&& cp -a /us
-
-ARG EXECUTABLES="/usr/local/bin/date"
+'&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
