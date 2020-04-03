@@ -15,7 +15,7 @@ ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG DOWNLOADS="https://github.com/coreutils/coreutils/archive/v$COREUTILS_VERSION.tar.gz"
 ARG BUILDCMDS=\
 "   cd coreutils-$COREUTILS_VERSION "\
-'&& eval "$COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
+'&& eval "LIBS=\"-lrt\" $COMMON_CONFIGURECMD --sysconfdir=/etc --mandir=/usr/share/man --infodir=/usr/share/info --disable-nls --without-gmp" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
 
