@@ -17,8 +17,8 @@ ARG DOWNLOADS="https://github.com/tds-fdw/tds_fdw/archive/v$TDS_FDW_VERSION.zip"
 ARG BUILDDEPS="postgresql-dev libressl3.0-libssl unixodbc gettext clang llvm9"
 ARG BUILDCMDS=\
 "   cd tds_fdw-$TDS_FDW_VERSION "\
-"&& make USE_PGXS=1 "\
-"&& make USE_PGXS=1 install"
+"&& CFLAGS="" make USE_PGXS=1 "\
+"&& CFLAGS="" make USE_PGXS=1 install"
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
