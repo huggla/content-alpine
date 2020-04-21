@@ -1,5 +1,5 @@
-# Secure and Minimal base-image with Python
-# https://hub.docker.com/repository/docker/huggla/sam-python
+# Secure and Minimal content-images, Python2.7
+# https://hub.docker.com/repository/docker/huggla/sam-content
 
 # =========================================================================
 # Init
