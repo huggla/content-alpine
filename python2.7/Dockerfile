@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="dev"
+ARG SaM_VERSION="2.0.2"
 ARG IMAGETYPE="content"
 ARG PYTHON_VERSION="2.7.17"
 ARG HUBPROFILE="huggla"
@@ -14,6 +14,7 @@ ARG HUBVERSION="$PYTHON_VERSION"
 ARG PYTHONIOENCODING="UTF-8"
 ARG EXCLUDEAPKS="python2"
 ARG EXCLUDEDEPS="python2"
+ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG RUNDEPS="libressl"
 ARG BUILDDEPS="g++ ca-certificates bzip2-dev coreutils dpkg-dev dpkg expat-dev findutils gcc gdbm-dev libc-dev libnsl-dev libressl-dev libtirpc-dev linux-headers make ncurses-dev pax-utils readline-dev sqlite-dev tcl-dev tk tk-dev zlib-dev"
 ARG DOWNLOADS="https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tar.xz"
