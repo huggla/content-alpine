@@ -35,7 +35,9 @@ ARG BUILDCMDS=\
 '&& mv pgadmin4 /finalfs/pgadmin4 '\
 '&& cp -a /usr/lib/python2.7/site-packages /finalfs/usr/lib/python2.7/ '\
 "&& sed -i 's|#!/usr/bin/python2.7|#!/usr/local/bin/python2.7|' /finalfs/usr/bin/gunicorn"
-ARG EXECUTABLES="/usr/bin/python2.7 /usr/bin/gunicorn"
+ARG FINALCMDS=\
+'   mkdir -p $DESTDIR-app/usr/include/python2.7 '\
+'&& mv /content/usr/include/python2.7/pyconfig.h $DESTDIR-app/usr/include/python2.7/'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
