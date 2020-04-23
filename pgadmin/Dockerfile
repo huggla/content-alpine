@@ -1,5 +1,5 @@
-# Secure and Minimal image of Pgadmin
-# https://hub.docker.com/repository/docker/huggla/sam-pgadmin
+# Secure and Minimal content-images, Pgadmin
+# https://hub.docker.com/repository/docker/huggla/sam-content
 
 # =========================================================================
 # Init
