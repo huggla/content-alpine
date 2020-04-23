@@ -34,7 +34,7 @@ ARG BUILDCMDS=\
 '&& python2.7 -OO -m compileall pgadmin4 '\
 '&& mv pgadmin4 /finalfs/content/pgadmin4 '\
 '&& cp -a /usr/lib/python2.7/site-packages /finalfs/content/usr/lib/python2.7/ '\
-"&& sed -i 's|#!/usr/bin/python2.7|#!/usr/local/bin/python2.7|' /finalfs/conent/usr/bin/gunicorn"
+"&& sed -i 's|#!/usr/bin/python2.7|#!/usr/local/bin/python2.7|' /finalfs/content/usr/bin/gunicorn"
 ARG FINALCMDS=\	
 '   mkdir -p $DESTDIR-app/usr/include/python2.7 '\	
 '&& mv /content/usr/include/python2.7/pyconfig.h $DESTDIR-app/usr/include/python2.7/'
