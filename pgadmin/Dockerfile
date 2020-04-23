@@ -26,10 +26,10 @@ ARG BUILDCMDS=\
 '&& echo "werkzeug==0.16.1" > pgadmin4/constraints.txt '\
 '&& pip install --no-cache-dir --disable-pip-version-check --requirement pgadmin4/requirements.txt --constraint pgadmin4/constraints.txt '\
 '&& cp -a pgadmin4/web /tmp/pgadmin4 '\
-'&& cp -a /usr/bin/gunicorn /finalfs/content/usr/bin/ '\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
 '&& find /tmp/pgadmin4 -name tests -type d | xargs rm -rf '\
 '&& mv /tmp/pgadmin4 ./ '\
+'&& cp -a /usr/bin/gunicorn /finalfs/content/usr/bin/ '\
 '&& pip uninstall --no-cache-dir --disable-pip-version-check --yes pip '\
 '&& python2.7 -OO -m compileall pgadmin4 '\
 '&& mv pgadmin4 /finalfs/content/pgadmin4 '\
