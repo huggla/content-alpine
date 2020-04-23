@@ -13,10 +13,7 @@ ARG HUBPROFILE="huggla"
 ARG HUBREPO="pgadmin"
 ARG HUBVERSION="$PGADMIN4_TAG"
 ARG PYTHONIOENCODING="UTF-8"
-ARG CONTENTIMAGE1="huggla/sam-content:python-$PYTHON_VERSION"
-ARG CONTENTSOURCE1="/content-dev"
-ARG CONTENTDESTINATION1="/"
-ARG BASEIMAGE="huggla/sam-python:$PYTHON_VERSION"
+ARG BASEIMAGE="huggla/sam-content:python-$PYTHON_VERSION"
 ARG CLONEGITS="'--branch $PGADMIN4_TAG --depth 1 https://git.postgresql.org/git/pgadmin4.git'"
 ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/python2.7"
 ARG RUNDEPS="sqlite-libs postgresql-libs libffi libsodium"
@@ -35,9 +32,6 @@ ARG BUILDCMDS=\
 '&& mv pgadmin4 /finalfs/content/pgadmin4 '\
 '&& cp -a /usr/lib/python2.7/site-packages /finalfs/content/usr/lib/python2.7/ '\
 "&& sed -i 's|#!/usr/bin/python2.7|#!/usr/local/bin/python2.7|' /finalfs/content/usr/bin/gunicorn"
-ARG FINALCMDS=\	
-'   mkdir -p $DESTDIR-app/usr/include/python2.7 '\	
-'&& mv /content/usr/include/python2.7/pyconfig.h $DESTDIR-app/usr/include/python2.7/'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
