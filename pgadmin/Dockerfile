@@ -7,7 +7,7 @@
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="dev"
 ARG IMAGETYPE="content"
-ARG PGADMIN4_TAG="REL-4_2"
+ARG PGADMIN4_TAG="REL-4_20"
 ARG PYTHON_VERSION="2.7.17"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="pgadmin"
