@@ -26,7 +26,7 @@ ARG BUILDCMDS=\
 '   rm -rf /finalfs/* '\
 '&& cp -a pgadmin4/web /tmp/pgadmin4 '\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/*.log /tmp/pgadmin4/config_*.py /tmp/pgadmin4/node_modules /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
-'&& find /tmp/pgadmin4 -name tests -type d -delete '\
+'&& find /tmp/pgadmin4 -name tests -type d | xargs rm -rf '\
 '&& find /tmp/pgadmin4 -name .DS_Store -type f -delete '\
 '&& mv /tmp/pgadmin4 ./ '\
 '&& cd pgadmin4 '\
