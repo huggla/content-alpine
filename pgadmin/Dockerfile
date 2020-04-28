@@ -16,12 +16,12 @@ ARG PYTHONIOENCODING="UTF-8"
 ARG CONTENTIMAGE1="huggla/sam-content:python-$PYTHON_VERSION"
 ARG CONTENTSOURCE1="/"
 ARG CONTENTDESTINATION1="/tmp/python"
-ARG INITIMAGE="node:alpine"
+ARG INITIMAGE="node:10-alpine"
 ARG BASEIMAGE="huggla/sam-content:python-$PYTHON_VERSION"
 ARG CLONEGITS="'--branch $PGADMIN4_TAG --depth 1 https://git.postgresql.org/git/pgadmin4.git'"
 ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/python2.7"
 ARG RUNDEPS="sqlite-libs postgresql-libs libffi libsodium"
-ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs"
+ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs libc6-compat libjpeg-turbo-dev libpng-dev nasm zlib-dev"
 ARG BUILDCMDS=\
 '   rm -rf /finalfs/* '\
 '&& cp -a pgadmin4/web /tmp/pgadmin4 '\
