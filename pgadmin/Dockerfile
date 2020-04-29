@@ -25,7 +25,7 @@ ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/pyth
 ARG RUNDEPS="sqlite-libs postgresql-libs libffi libsodium"
 ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs autoconf automake bash g++ libc6-compat libjpeg-turbo-dev libpng-dev make nasm git zlib-dev"
 ARG BUILDCMDS=\
-'   cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 "\
+"   cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 "\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/*.log /tmp/pgadmin4/config_*.py /tmp/pgadmin4/node_modules /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
 '&& find /tmp/pgadmin4 -name tests -type d | xargs rm -rf '\
 '&& find /tmp/pgadmin4 -name .DS_Store -type f -delete '\
