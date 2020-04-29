@@ -16,15 +16,16 @@ ARG PYTHONIOENCODING="UTF-8"
 ARG CONTENTIMAGE1="huggla/sam-content:python-$PYTHON_VERSION"
 ARG CONTENTSOURCE1="/"
 ARG CONTENTDESTINATION1="/tmp/python"
-ARG INITIMAGE="node:10-alpine"
+ARG CONTENTIMAGE2="node:10-alpine"
+ARG CONTENTSOURCE2="/"
+ARG CONTENTDESTINATION2="/"
 ARG BASEIMAGE="huggla/sam-content:python-$PYTHON_VERSION"
 ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$PGADMIN_VERSION/source/pgadmin4-$PGADMIN_VERSION.tar.gz"
 ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/python2.7"
 ARG RUNDEPS="sqlite-libs postgresql-libs libffi libsodium"
-ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs libc6-compat libjpeg-turbo-dev libpng-dev nasm zlib-dev"
+ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs autoconf automake bash g++ libc6-compat libjpeg-turbo-dev libpng-dev make nasm git zlib-dev"
 ARG BUILDCMDS=\
-'   rm -rf /finalfs/* '\
-"&& cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 "\
+'   cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 "\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/*.log /tmp/pgadmin4/config_*.py /tmp/pgadmin4/node_modules /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
 '&& find /tmp/pgadmin4 -name tests -type d | xargs rm -rf '\
 '&& find /tmp/pgadmin4 -name .DS_Store -type f -delete '\
