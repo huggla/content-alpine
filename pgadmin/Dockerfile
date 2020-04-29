@@ -7,24 +7,24 @@
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="dev"
 ARG IMAGETYPE="content"
-ARG PGADMIN4_TAG="REL-4_20"
+ARG PGADMIN_VERSION="4.20"
 ARG PYTHON_VERSION="2.7.17"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="pgadmin"
-ARG HUBVERSION="$PGADMIN4_TAG"
+ARG HUBVERSION="$PGADMIN_VERSION"
 ARG PYTHONIOENCODING="UTF-8"
 ARG CONTENTIMAGE1="huggla/sam-content:python-$PYTHON_VERSION"
 ARG CONTENTSOURCE1="/"
 ARG CONTENTDESTINATION1="/tmp/python"
 ARG INITIMAGE="node:10-alpine"
 ARG BASEIMAGE="huggla/sam-content:python-$PYTHON_VERSION"
-ARG CLONEGITS="'--branch $PGADMIN4_TAG --depth 1 https://git.postgresql.org/git/pgadmin4.git'"
+ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$PGADMIN_VERSION/source/pgadmin4-$PGADMIN_VERSION.tar.gz"
 ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/python2.7"
 ARG RUNDEPS="sqlite-libs postgresql-libs libffi libsodium"
 ARG BUILDDEPS="postgresql-dev libffi-dev libsodium-dev sqlite-dev postgresql-client postgresql-libs libc6-compat libjpeg-turbo-dev libpng-dev nasm zlib-dev"
 ARG BUILDCMDS=\
 '   rm -rf /finalfs/* '\
-'&& cp -a pgadmin4/web /tmp/pgadmin4 '\
+'&& cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 '\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/*.log /tmp/pgadmin4/config_*.py /tmp/pgadmin4/node_modules /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
 '&& find /tmp/pgadmin4 -name tests -type d | xargs rm -rf '\
 '&& find /tmp/pgadmin4 -name .DS_Store -type f -delete '\
