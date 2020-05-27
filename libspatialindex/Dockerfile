@@ -5,15 +5,16 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.1"
+ARG SaM_VERSION="2.0.3"
 ARG IMAGETYPE="content"
+ARG LIBSPATIALINDEX_VERSION="1.9.3"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="libspatialindex"
-ARG HUBVERSION="master"
+ARG HUBVERSION="$LIBSPATIALINDEX_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
-ARG CLONEGITS="https://github.com/libspatialindex/libspatialindex.git"
+ARG DOWNLOADS="https://github.com/libspatialindex/libspatialindex/releases/download/$LIBSPATIALINDEX_VERSION/spatialindex-src-$LIBSPATIALINDEX_VERSION.tar.gz"
 ARG BUILDCMDS=\
-"   cd libspatialindex "\
+"   cd libspatialindex-src-$LIBSPATIALINDEX_VERSION "\
 '&& eval "$COMMON_CMAKECMD ./" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
