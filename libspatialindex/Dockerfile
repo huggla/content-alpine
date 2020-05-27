@@ -14,7 +14,7 @@ ARG HUBVERSION="$LIBSPATIALINDEX_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG DOWNLOADS="https://github.com/libspatialindex/libspatialindex/releases/download/$LIBSPATIALINDEX_VERSION/spatialindex-src-$LIBSPATIALINDEX_VERSION.tar.gz"
 ARG BUILDCMDS=\
-"   cd libspatialindex-src-$LIBSPATIALINDEX_VERSION "\
+"   cd spatialindex-src-$LIBSPATIALINDEX_VERSION "\
 '&& eval "$COMMON_CMAKECMD ./" '\
 '&& eval "$COMMON_MAKECMDS"'
 # ARGs (can be passed to Build/Final) </END>
