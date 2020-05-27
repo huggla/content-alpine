@@ -5,10 +5,10 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.1"
+ARG SaM_VERSION="2.0.3"
 ARG IMAGETYPE="content"
-ARG HDF5_MAJOR_VERSION="1.10"
-ARG HDF5_MINOR_VERSION="5"
+ARG HDF5_MAJOR_VERSION="1.12"
+ARG HDF5_MINOR_VERSION="0"
 ARG HDF5_VERSION="$HDF5_MAJOR_VERSION.$HDF5_MINOR_VERSION"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="hdf5"
