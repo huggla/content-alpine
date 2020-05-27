@@ -21,9 +21,9 @@ ARG CC="mpicc"
 ARG BUILDCMDS=\
 "   cd hdf5-$HDF5_VERSION "\
 '&& eval "$COMMON_CONFIGURECMD --enable-parallel --disable-fortran --disable-java --enable-static-exec --enable-direct-vfd --without-szlib" '\
-'&& eval "$COMMON_MAKECMDS" '\
-'&& mkdir -p "$DESTDIR-examples/usr/share" '\
-'&& mv "$DESTDIR/usr/share/hdf5_examples" "$DESTDIR-examples/usr/share/"'
+'&& eval "$COMMON_MAKECMDS"'
+#'&& mkdir -p "$DESTDIR-examples/usr/share" '\
+#'&& mv "$DESTDIR/usr/share/hdf5_examples" "$DESTDIR-examples/usr/share/"'
 # ARGs (can be passed to Build/Final) </END>
 
 # Generic template (don't edit) <BEGIN>
