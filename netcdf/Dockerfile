@@ -5,10 +5,10 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.3"
+ARG SaM_VERSION="alpine3.11"
 ARG IMAGETYPE="content"
 ARG NETCDF_VERSION="4.7.4"
-ARG HDF5_VERSION="1.12.0"
+ARG HDF5_VERSION="alpine3.11"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="netcdf"
 ARG HUBVERSION="$NETCDF_VERSION"
@@ -17,9 +17,9 @@ ARG CONTENTIMAGE1="huggla/sam-content:hdf5-$HDF5_VERSION"
 ARG CONTENTSOURCE1="/content*"
 ARG CONTENTDESTINATION1="/"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG BUILDDEPS="zlib-dev openmpi-dev curl-dev m4 libexecinfo-dev"
+ARG BUILDDEPS="zlib-dev curl-dev m4 libexecinfo-dev"
 ARG DOWNLOADS="https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-$NETCDF_VERSION.tar.gz"
-ARG CC="mpicc"
+#ARG CC="mpicc"
 ARG BUILDCMDS=\
 "   cd netcdf-c-$NETCDF_VERSION "\
 '&& eval "$COMMON_CONFIGURECMD --disable-doxygen --disable-utilities --disable-testsets --disable-examples" '\
