@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.3"
+ARG SaM_VERSION="alpine3.11"
 ARG IMAGETYPE="content"
 ARG HDF5_MAJOR_VERSION="1.12"
 ARG HDF5_MINOR_VERSION="0"
@@ -15,9 +15,9 @@ ARG HUBREPO="hdf5"
 ARG HUBVERSION="$HDF5_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG ADDREPOS="http://dl-cdn.alpinelinux.org/alpine/edge/testing"
-ARG BUILDDEPS="zlib-dev openmpi-dev"
+ARG BUILDDEPS="zlib-dev"
 ARG DOWNLOADS="https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-$HDF5_MAJOR_VERSION/hdf5-$HDF5_VERSION/src/hdf5-$HDF5_VERSION.tar.gz"
-ARG CC="mpicc"
+#ARG CC="mpicc"
 ARG BUILDCMDS=\
 "   cd hdf5-$HDF5_VERSION "\
 '&& eval "$COMMON_CONFIGURECMD --enable-parallel --disable-fortran --disable-java --enable-static-exec --enable-direct-vfd --without-szlib" '\
