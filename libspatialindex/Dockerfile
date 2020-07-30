@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.3"
+ARG SaM_VERSION="dev"
 ARG IMAGETYPE="content"
 ARG LIBSPATIALINDEX_VERSION="1.9.3"
 ARG HUBPROFILE="huggla"
