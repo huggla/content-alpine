@@ -18,6 +18,7 @@ ARG BUILDDEPS="postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-d
 ARG BUILDCMDS=\
 "   cd pointcloud-$PGPOINTCLOUD_VERSION "\
 '&& ./autogen.sh '\
+'&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
 # ARGs (can be passed to Build/Final) </END>
 
