@@ -21,7 +21,6 @@ ARG BUILDCMDS=\
 '&& eval "$COMMON_MAKECMDS" '\
 "&& cd ../Python "\
 "&& python3 configure.py --pyqt=PyQt5 --qmake=/usr/bin/qmake-qt5 --no-docstrings "\
-"&& sed -i 's/include_next/include/' /usr/include/fortify/stdlib.h "\
 '&& eval "$COMMON_MAKECMDS" '\
 "&& cd / "\
 "&& cp -a \$BUILDDIR \$DESTDIR/ "\
