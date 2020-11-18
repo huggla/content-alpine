@@ -5,9 +5,9 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.1"
+ARG SaM_VERSION="2.0.4"
 ARG IMAGETYPE="content,base"
-ARG FREETDS_VERSION="1.1.26"
+ARG FREETDS_VERSION="1.2.11"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="freetds"
 ARG HUBVERSION="$FREETDS_VERSION"
