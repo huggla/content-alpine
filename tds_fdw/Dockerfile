@@ -5,13 +5,13 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.1"
+ARG SaM_VERSION="2.0.4"
 ARG IMAGETYPE="content"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="tds_fdw"
 ARG HUBVERSION="master"
-ARG FREETDS_VERSION="1.1.26"
-ARG TDS_FDW_VERSION="2.0.1"
+ARG FREETDS_VERSION="1.2.11"
+ARG TDS_FDW_VERSION="2.0.2"
 ARG BASEIMAGE="huggla/sam-content:freetds-$FREETDS_VERSION"
 ARG DOWNLOADS="https://github.com/tds-fdw/tds_fdw/archive/v$TDS_FDW_VERSION.zip"
 ARG BUILDDEPS="postgresql-dev libressl3.0-libssl unixodbc gettext clang llvm9"
