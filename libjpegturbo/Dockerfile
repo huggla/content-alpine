@@ -5,9 +5,9 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.1"
+ARG SaM_VERSION="2.0.4"
 ARG IMAGETYPE="content"
-ARG LIBJPEGTURBO_VERSION="2.0.4"
+ARG LIBJPEGTURBO_VERSION="2.0.6"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="libjpegturbo"
 ARG HUBVERSION="$LIBJPEGTURBO_VERSION"
