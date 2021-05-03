@@ -14,7 +14,7 @@ ARG HUBVERSION="$PGAGENTVERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
 ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgagent/pgAgent-$PGAGENTVERSION-Source.tar.gz"
-ARG BUILDDEPS="postgresql-dev libc-dev boost-dev ssl_client"
+ARG BUILDDEPS="postgresql-dev libc-dev boost1.76-dev ssl_client"
 ARG BUILDCMDS=\
 "   cd pgAgent-$PGAGENTVERSION-Source "\
 '&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_FLAGS="$CFLAGS" '\
