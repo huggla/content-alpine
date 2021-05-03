@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.5"
+ARG SaM_VERSION="2.0.4"
 ARG IMAGETYPE="content"
 ARG PGAGENTVERSION="4.2.1"
 ARG HUBPROFILE="huggla"
@@ -14,7 +14,7 @@ ARG HUBVERSION="$PGAGENTVERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
 ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgagent/pgAgent-$PGAGENTVERSION-Source.tar.gz"
-ARG BUILDDEPS="postgresql-dev libc-dev boost1.76-dev ssl_client make"
+ARG BUILDDEPS="postgresql-dev libc-dev boost1.76-dev ssl_client"
 ARG BUILDCMDS=\
 "   cd pgAgent-$PGAGENTVERSION-Source "\
 '&& cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_FLAGS="$CFLAGS" '\
