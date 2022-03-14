@@ -21,7 +21,7 @@ ARG BUILDCMDS=\
 '&& which aclocal '\
 '&& test -x /usr/bin/aclocal '\
 "&& sed -i 's/\${ACLOCAL}/true/g' autogen.sh "\
-'&& ./autogen.sh '\
+'&& busybox sh autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
 # ARGs (can be passed to Build/Final) </END>
