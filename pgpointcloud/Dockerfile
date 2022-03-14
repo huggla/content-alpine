@@ -5,18 +5,20 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.4"
+ARG SaM_VERSION="2.0.6-3.15"
 ARG IMAGETYPE="content"
-ARG PGPOINTCLOUD_VERSION="1.2.1"
+ARG PGPOINTCLOUD_VERSION="1.2.1+"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="pgpointcloud"
 ARG HUBVERSION="$PGPOINTCLOUD_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
-ARG DOWNLOADS="https://github.com/pgpointcloud/pointcloud/archive/v$PGPOINTCLOUD_VERSION.tar.gz"
+#ARG DOWNLOADS="https://github.com/pgpointcloud/pointcloud/archive/v$PGPOINTCLOUD_VERSION.tar.gz"
+ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
-"   cd pointcloud-$PGPOINTCLOUD_VERSION "\
+"ls -la "\
+"&&   cd pointcloud-$PGPOINTCLOUD_VERSION "\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
@@ -28,7 +30,8 @@ FROM ${CONTENTIMAGE2:-scratch} as content2
 FROM ${CONTENTIMAGE3:-scratch} as content3
 FROM ${CONTENTIMAGE4:-scratch} as content4
 FROM ${CONTENTIMAGE5:-scratch} as content5
-FROM ${INITIMAGE:-${BASEIMAGE:-huggla/secure_and_minimal:$SaM_VERSION-base}} as init
+FROM ${BASEIMAGE:-huggla/secure_and_minimal:$SaM_VERSION-base} as base
+FROM ${INITIMAGE:-scratch} as init
 # Generic template (don't edit) </END>
 
 # =========================================================================
