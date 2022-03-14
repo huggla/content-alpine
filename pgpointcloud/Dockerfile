@@ -18,6 +18,7 @@ ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="automake postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
 "   cd pointcloud "\
+'&& which aclocal '\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
