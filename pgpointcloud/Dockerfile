@@ -7,7 +7,7 @@
 # ARGs (can be passed to Build/Final) <BEGIN>
 ARG SaM_VERSION="2.0.6-3.15"
 ARG IMAGETYPE="content"
-ARG PGPOINTCLOUD_VERSION="1.2.1+"
+ARG PGPOINTCLOUD_VERSION="1.2.1"
 ARG HUBPROFILE="huggla"
 ARG HUBREPO="pgpointcloud"
 ARG HUBVERSION="$PGPOINTCLOUD_VERSION"
@@ -17,8 +17,7 @@ ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
 ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
-"ls -la "\
-"&&   cd pointcloud-$PGPOINTCLOUD_VERSION "\
+"   cd pointcloud "\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
