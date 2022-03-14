@@ -20,6 +20,7 @@ ARG BUILDCMDS=\
 "   cd pointcloud "\
 '&& which aclocal '\
 '&& test -x /usr/bin/aclocal '\
+"&& sed -i 's/if [ ! ${ACLOCAL} ]/if [ ! true ]/' autogen.sh "\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
