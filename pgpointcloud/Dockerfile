@@ -15,7 +15,7 @@ ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
 #ARG DOWNLOADS="https://github.com/pgpointcloud/pointcloud/archive/v$PGPOINTCLOUD_VERSION.tar.gz"
 ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
-ARG BUILDDEPS="postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
+ARG BUILDDEPS="aclocal postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
 "   cd pointcloud "\
 '&& ./autogen.sh '\
