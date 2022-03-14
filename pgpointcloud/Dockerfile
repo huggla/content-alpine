@@ -19,6 +19,7 @@ ARG BUILDDEPS="coreutils postgresql postgresql-dev libc-dev boost-dev ssl_client
 ARG BUILDCMDS=\
 "   cd pointcloud "\
 '&& which aclocal '\
+'&& test -x /usr/bin/aclocal '\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
