@@ -13,11 +13,12 @@ ARG HUBREPO="pgpointcloud"
 ARG HUBVERSION="$PGPOINTCLOUD_VERSION"
 ARG BASEIMAGE="huggla/secure_and_minimal:$SaM_VERSION-busybox"
 ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
-#ARG DOWNLOADS="https://github.com/pgpointcloud/pointcloud/archive/v$PGPOINTCLOUD_VERSION.tar.gz"
+ARG DOWNLOADS="https://github.com/hobu/laz-perf/raw/master/cpp/lazperf/las.hpp"
 ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="coreutils postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
-"   cd pointcloud "\
+"   cp -a las.hpp /usr/include/lazperf/ "\
+"&&   cd pointcloud "\
 #"&& sed -i 's/\${ACLOCAL}/true/g' autogen.sh "\
 #'&& ln -sf /bin/busybox /bin/sh '\
 '&& ./autogen.sh '\
