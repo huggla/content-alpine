@@ -17,9 +17,9 @@ ARG DOWNLOADS="https://github.com/hobu/laz-perf/raw/master/cpp/lazperf/las.hpp"
 ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="coreutils postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 #ARG COMMON_CONFIGURECMD="./configure --prefix=/usr --with-lazperf=/usr/include"
+ARG COMMON_MAKECMDS="make && make install"
 ARG BUILDCMDS=\
-"   cp -a las.hpp /usr/include/ "\
-"&&   cd pointcloud "\
+"   cd pointcloud "\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
