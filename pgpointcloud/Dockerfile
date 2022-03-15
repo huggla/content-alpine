@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.6"
+ARG SaM_VERSION="2.0.6-3.15"
 ARG IMAGETYPE="content"
 ARG PGPOINTCLOUD_VERSION="1.2.1"
 ARG HUBPROFILE="huggla"
