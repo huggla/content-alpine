@@ -16,10 +16,10 @@ ARG MAKEDIRS="\$DESTDIR/usr/share/postgresql/extension \$DESTDIR/usr/bin"
 ARG DOWNLOADS="https://github.com/hobu/laz-perf/raw/master/cpp/lazperf/las.hpp"
 ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="coreutils postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
-ARG COMMON_CONFIGURECMD="./configure --prefix=${COMMON_CONFIGUREPREFIX} --with-lazperf=/usr/include/lazperf"
+#ARG COMMON_CONFIGURECMD="./configure --prefix=${COMMON_CONFIGUREPREFIX} --with-lazperf=/usr/include/lazperf"
 ARG BUILDCMDS=\
 "   cp -a las.hpp /usr/include/lazperf/ "\
-"&& ls -la /usr/include/lazperf/ "\
+"&& cp -a /usr/include/lazperf /usr/include/laz-perf "\
 "&&   cd pointcloud "\
 '&& ./autogen.sh '\
 '&& ./configure --help '\
