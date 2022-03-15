@@ -18,12 +18,9 @@ ARG CLONEGITS="https://github.com/pgpointcloud/pointcloud.git"
 ARG BUILDDEPS="coreutils postgresql postgresql-dev libc-dev boost-dev ssl_client libxml2-dev cunit-dev laz-perf-dev laz-perf"
 ARG BUILDCMDS=\
 "   cd pointcloud "\
-'&& which aclocal '\
-'&& ls -la /bin '\
-'&& test -x /usr/bin/aclocal '\
 "&& sed -i 's/\${ACLOCAL}/true/g' autogen.sh "\
 '&& ln -sf /bin/busybox /bin/sh '\
-'&& busybox sh autogen.sh '\
+'&& ./autogen.sh '\
 '&& ./configure --help '\
 '&& eval "$COMMON_INSTALLSRC"'
 # ARGs (can be passed to Build/Final) </END>
