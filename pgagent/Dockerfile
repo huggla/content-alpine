@@ -5,7 +5,7 @@
 # Init
 # =========================================================================
 # ARGs (can be passed to Build/Final) <BEGIN>
-ARG SaM_VERSION="2.0.4"
+ARG SaM_VERSION="2.0.6-3.16"
 ARG IMAGETYPE="content"
 ARG PGAGENTVERSION="4.2.1"
 ARG HUBPROFILE="huggla"
@@ -29,7 +29,8 @@ FROM ${CONTENTIMAGE2:-scratch} as content2
 FROM ${CONTENTIMAGE3:-scratch} as content3
 FROM ${CONTENTIMAGE4:-scratch} as content4
 FROM ${CONTENTIMAGE5:-scratch} as content5
-FROM ${INITIMAGE:-${BASEIMAGE:-huggla/secure_and_minimal:$SaM_VERSION-base}} as init
+FROM ${BASEIMAGE:-huggla/secure_and_minimal:$SaM_VERSION-base} as base
+FROM ${INITIMAGE:-scratch} as init
 # Generic template (don't edit) </END>
 
 # =========================================================================
