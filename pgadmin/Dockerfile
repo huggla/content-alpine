@@ -17,7 +17,7 @@ ARG CONTENTDESTINATION1="/"
 ARG DOWNLOADS="https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v$PGADMIN_VERSION/source/pgadmin4-$PGADMIN_VERSION.tar.gz"
 #ARG MAKEDIRS="/usr/lib/python2.7 /var/lib /content/usr/bin /content/usr/lib/python2.7"
 ARG RUNDEPS="python3 sqlite-libs postgresql-libs libffi libsodium"
-ARG BUILDDEPS="python3 postgresql14-dev libffi-dev libsodium-dev sqlite-dev postgresql14-client postgresql-libs autoconf automake bash g++ libc6-compat libjpeg-turbo-dev libpng-dev make nasm git zlib-dev"
+ARG BUILDDEPS="git python3 postgresql14-dev libffi-dev libsodium-dev sqlite-dev postgresql14-client postgresql-libs autoconf automake bash g++ libc6-compat libjpeg-turbo-dev libpng-dev make nasm git zlib-dev"
 ARG BUILDCMDS=\
 "   cp -a pgadmin4-$PGADMIN_VERSION/web /tmp/pgadmin4 "\
 '&& rm -rf pgadmin4 /tmp/pgadmin4/*.log /tmp/pgadmin4/config_*.py /tmp/pgadmin4/node_modules /tmp/pgadmin4/regression /tmp/pgadmin4/pgadmin/feature_tests '\
