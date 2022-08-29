@@ -26,7 +26,7 @@ ARG BUILDCMDS=\
 '&& mkdir /pgadmin4 '\
 '&& mv /tmp/pgadmin4 /pgadmin4/web '\
 '&& cd /pgadmin4/web '\
-'&& npm install '\
+'&& npm install --force '\
 '&& rm -f yarn.lock '\
 '&& yarn import '\
 '&& yarn audit --groups dependencies '\
